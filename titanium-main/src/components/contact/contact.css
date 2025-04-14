@@ -1,0 +1,179 @@
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-tercary);
+    background-image: url(../../assets/contact.jpg) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.contact__title {
+    background: var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+    margin-bottom: 4rem;
+    width: 100%;
+}
+.contact__title h2 {
+    border-bottom: solid 2px var(--color-text-light);
+}
+.contact__container {
+    width: 80%;
+    display:grid;
+    grid-template-columns: 32% 58%;
+    gap: 8%;
+    background: var(--color-secondary-middle);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 5rem;
+}
+
+.contact__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    
+}
+
+.contact__option {
+    background: var(--color-primary);
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    color: var(--color-text-light);
+    letter-spacing: 1px;
+}
+
+.contact__option:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+}
+
+.contact__option-icon {
+    font-size:1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact__option a {
+    margin-top: 0.7rem;
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    resize: none;
+    color: var(--color-text-light);
+}
+::placeholder {
+    color: var(--color-text-light);
+}
+.btn {
+    width: 200px;
+    height: 35px;
+    background: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    color: var(--color-text-light);
+    border: 1px solid transparent;
+    margin: 1rem;
+  
+}
+.btn:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+    cursor: pointer;
+}
+.send__message {
+    display: none;
+}
+.sending .send__message {
+    display: flex;
+} 
+.sending input, .sending textarea, .sending .btn{
+    display: none;
+}
+
+  
+.sending {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    background: green;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    
+}
+/**/
+.title__dealers {
+    padding: 1rem;
+    text-align: center;
+    background: var(--color-secondary-middle);
+    border-radius: var(--border-radius-top);
+    border-bottom: solid 2px var(--color-primary);
+}
+.title__dealers h2 {
+    padding: 0.5rem;
+}
+.dealers {
+    margin-bottom: 5rem;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--color-secondary-middle);
+    border-radius: var(--border-radius);
+    color: var(--color-text-light);
+}
+.dealer { 
+    text-align: center;
+    padding: 1rem;
+    /* color: var(--color-text-dark); */
+}
+
+@media screen and (max-width:1161px) {
+    .contact__container {
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .contact__container {
+        grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+    }
+    .dealers {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    form {
+        align-items: center;
+    }
+    .title__dealers {
+        max-width: 250px;
+        padding: 0.5rem;
+    }
+}
