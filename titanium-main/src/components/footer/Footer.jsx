@@ -2,45 +2,47 @@ import React, { useEffect } from "react";
 import './footer.css';
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
-import { RiShipLine } from "react-icons/ri";
 
+// Composant Footer principal
 const Footer = () => {
   useEffect(() => {
+    // animations éléments quand on va les voirss
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
+          entry.target.classList.add('animate'); // cclasse 'animate' 
         }
       });
     }, { threshold: 0.1 });
 
+    // animations elemen
     const elements = document.querySelectorAll('.footer__column, .footer__title, .footer__subtitle, .footer__list li, .footer__note, .footer__contact-item');
     elements.forEach(el => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => observer.disconnect(); 
   }, []);
 
   return (
     <footer className="footer">
       <div className="footer__shape-container">
+        {/* Forme haut footer */}
         <div className="footer__shape">
           <div className="footer__content">
             <div className="footer__columns">
+
+              {/* À propos */}
               <div className="footer__column">
-                <h2 className="footer__title">
-                  <RiShipLine className="footer__title-icon" /> LA BOUTIQUE
-                </h2>
                 <div className="footer__section">
-                  <h3 className="footer__subtitle">Mention légale</h3>
+                  <h3 className="footer__subtitle">A propos</h3>
                   <ul className="footer__list">
-                    <li><span className="footer__list-item">Politique de confidentialité</span></li>
-                    <li><span className="footer__list-item">CO2</span></li>
-                    <li><span className="footer__list-item">Livraison et retours</span></li>
-                    <li><span className="footer__list-item">Engagement concours</span></li>
+                    <li><span className="footer__list-item">Accueil</span></li>
+                    <li><span className="footer__list-item">Gamme</span></li>
+                    <li><span className="footer__list-item">contact</span></li>
                   </ul>
                 </div>
               </div>
 
+              {/* Réseaux sociaux */}
               <div className="footer__column">
                 <div className="footer__section">
                   <h3 className="footer__subtitle">NOS RÉSEAUX</h3>
@@ -59,18 +61,19 @@ const Footer = () => {
                         <span className="footer__social-hover"></span>
                       </a>
                     </li>
-                    <li><span className="footer__list-item">Vendue</span></li>
                   </ul>
                 </div>
                 <div className="footer__note">
-                  Noté par <span className="footer__highlight">@diment.cher</span>
+                  <span className="footer__highlight"></span>
                 </div>
               </div>
 
+              {/* contact */}
               <div className="footer__column">
                 <div className="footer__section">
                   <h3 className="footer__subtitle">CONTACT</h3>
 
+                  {/* mail */}
                   <div className="footer__contact-item">
                     <div className="footer__contact-icon-wrapper">
                       <MdEmail className="footer__contact-icon" />
@@ -81,6 +84,7 @@ const Footer = () => {
                     </a>
                   </div>
 
+                  {/* Tél */}
                   <div className="footer__contact-item">
                     <div className="footer__contact-icon-wrapper">
                       <MdPhone className="footer__contact-icon" />
@@ -91,6 +95,7 @@ const Footer = () => {
                     </a>
                   </div>
 
+                  {/* Adresse */}
                   <div className="footer__contact-item">
                     <div className="footer__contact-icon-wrapper">
                       <MdLocationOn className="footer__contact-icon" />
@@ -99,6 +104,7 @@ const Footer = () => {
                       <span className="footer__contact-text">Port du bourget, 73000 Bourget du Lac</span>
                     </div>
                   </div>
+
                 </div>
               </div>
 
@@ -107,6 +113,7 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* droit en bas du footer */}
       <div className="footer__bottom">
         <small className="footer__copyright">
           &copy; {new Date().getFullYear()} Bateaux Titanium — Tous droits réservés.

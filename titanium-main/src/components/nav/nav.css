@@ -21,6 +21,7 @@
 .navbar__logo img {
     border-radius: var(--border-radius);
     height: 25px;
+    filter: brightness(0) saturate(100%) invert(26%) sepia(98%) saturate(2272%) hue-rotate(198deg) brightness(97%) contrast(101%);
 }
 
 .navbar__links {
