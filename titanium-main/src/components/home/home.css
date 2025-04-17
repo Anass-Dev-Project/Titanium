@@ -1,73 +1,358 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#home {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
 
 .home__contain {
-    display: flex;
-    justify-content: center;
-    background-image: url(../../assets/1.jpg) ;
+    background-image: url(../../assets/1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 540px;
+    height: 100vh;
+    width: 100%;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
-/******/
-.home__title {
-    background: var(--color-secondary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70px;
-}
-.home__title h1 {
-    border-bottom: solid 2px var(--color-text-light);
-    text-align: center;
-    align-items: center;
-}
-/******/
+
 .home__about {
-    color: var(--color-text-dark);
-    background: var(--color-tercary);
-    padding: 25px;
-    text-align: center;
+    color: #ffffff;
+    padding: 2rem;
+    text-align: left;
+    max-width: 500px;
+    margin-left: 0.6rem;
+    margin-top: 3.5rem;
 }
+
+/* texte ombre  */
 .home__about h3 {
-    border-top: solid 3px var(--color-primary);
-    border-bottom: solid 3px var(--color-primary);
+    padding: 0.5rem 0;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.9), 
+        -3px -3px 6px rgba(0, 0, 0, 0.9), 
+        3px -3px 6px rgba(0, 0, 0, 0.9), 
+        -3px 3px 6px rgba(0, 0, 0, 0.9),
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        -2px -2px 4px rgba(0, 0, 0, 0.8);
 }
-.home__about h2 {
-    padding: 1rem 0;
+
+
+.home__description {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    color: #ffffff;
+    text-align: right;
+    max-width: 300px;
 }
-/****/
+
+.home__description p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.5;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.9), 
+        -3px -3px 6px rgba(0, 0, 0, 0.9), 
+        3px -3px 6px rgba(0, 0, 0, 0.9), 
+        -3px 3px 6px rgba(0, 0, 0, 0.9),
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        -2px -2px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+.home__about h3,
+.home__about h2,
+.home__about p,
+.home__bottom h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+
 .home__bottom {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.socialNetwork {
+    display: flex;
+    gap: 1rem; 
+}
+
+/* boutons icônes reseau */
+.socialButton {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-}
-.socialNetwork a {
-    padding: 1rem;
-    font-size: 2rem;
-    color: var(--color-primary);
-    transition: all .3s;
-}
-.socialNetwork a:hover {
-    color: var(--color-primary-light);
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
+.socialButton svg {
+    font-size: 1.5rem;
+    color: #1A2526;
+}
+
+/* Effet */
+.socialButton:hover {
+    background-color: #1A2526;
+    transform: scale(1.1);
+}
+
+.socialButton:hover svg {
+    color: #D3D3D3;
+}
+
+/* Responsive */
 
 
-@media screen and (max-width:820px) {
+@media screen and (max-width: 820px) {
     .home__contain {
-        background-position: top;
-        height: 428px;
+        height: 80vh;
     }
+
+    .home__about {
+        margin-left: 0.5rem;
+        margin-top: 3.5rem;
+        max-width: 90%;
     }
-@media screen and (max-width:767px) {
-.home__contain {
-    background-position: top;
-    height: 216px;
+
+    .home__about h3,
+    .home__about h2,
+    .home__about p,
+    .home__bottom h2 {
+        font-size: 1.4rem;
+    }
+
+    .home__about h3 {
+        text-shadow: 
+            2.5px 2.5px 5px rgba(0, 0, 0, 0.9), 
+            -2.5px -2.5px 5px rgba(0, 0, 0, 0.9), 
+            2.5px -2.5px 5px rgba(0, 0, 0, 0.9), 
+            -2.5px 2.5px 5px rgba(0, 0, 0, 0.9),
+            1.5px 1.5px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .home__description {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        max-width: 250px;
+    }
+
+    .home__description p {
+        font-size: 1.4rem;
+        text-shadow: 
+            2.5px 2.5px 5px rgba(0, 0, 0, 0.9), 
+            -2.5px -2.5px 5px rgba(0, 0, 0, 0.9), 
+            2.5px -2.5px 5px rgba(0, 0, 0, 0.9), 
+            -2.5px 2.5px 5px rgba(0, 0, 0, 0.9),
+            1.5px 1.5px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .socialButton {
+        width: 36px;
+        height: 36px;
+    }
+
+    .socialButton svg {
+        font-size: 1.3rem;
+    }
 }
-.home__bottom {
-    flex-direction: column;
+
+
+@media screen and (max-width: 576px) {
+    .home__contain {
+        height: 70vh;
+    }
+
+    .home__about {
+        margin-left: 1.2rem;
+        margin-top: 2rem;
+        max-width: 85%;
+    }
+
+    .home__about h3,
+    .home__about h2,
+    .home__about p,
+    .home__bottom h2 {
+        font-size: 1.1rem; 
+    }
+
+    .home__about h3 {
+        text-shadow: 
+            1.5px 1.5px 3px rgba(0, 0, 0, 0.9), 
+            -1.5px -1.5px 3px rgba(0, 0, 0, 0.9), 
+            1.5px -1.5px 3px rgba(0, 0, 0, 0.9), 
+            -1.5px 1.5px 3px rgba(0, 0, 0, 0.9),
+            1px 1px 2px rgba(0, 0, 0, 0.8); 
+    }
+
+    .home__description {
+        bottom: 1rem;
+        right: 1rem;
+        max-width: 200px;
+    }
+
+    .home__description p {
+        font-size: 1.1rem; 
+        text-shadow: 
+            1.5px 1.5px 3px rgba(0, 0, 0, 0.9), 
+            -1.5px -1.5px 3px rgba(0, 0, 0, 0.9), 
+            1.5px -1.5px 3px rgba(0, 0, 0, 0.9), 
+            -1.5px 1.5px 3px rgba(0, 0, 0, 0.9),
+            1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .home__bottom {
+        gap: 0.7rem; 
+    }
+
+    .socialButton {
+        width: 32px; 
+        height: 32px;
+    }
+
+    .socialButton svg {
+        font-size: 1.1rem; 
+    }
 }
+
+
+@media screen and (max-width: 430px) {
+    .home__contain {
+        height: 65vh;
+    }
+
+    .home__about {
+        margin-left: 0.1rem;
+        margin-top: 3.2rem;
+        max-width: 80%;
+    }
+
+    .home__about h3,
+    .home__about h2,
+    .home__about p,
+    .home__bottom h2 {
+        font-size: 1rem; 
+    }
+
+    .home__about h3 {
+        text-shadow: 
+            1.2px 1.2px 2.5px rgba(0, 0, 0, 0.9), 
+            -1.2px -1.2px 2.5px rgba(0, 0, 0, 0.9), 
+            1.2px -1.2px 2.5px rgba(0, 0, 0, 0.9), 
+            -1.2px 1.2px 2.5px rgba(0, 0, 0, 0.9),
+            0.8px 0.8px 1.5px rgba(0, 0, 0, 0.8); 
+    }
+
+    .home__description {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        max-width: 180px;
+    }
+
+    .home__description p {
+        font-size: 1rem; 
+        text-shadow: 
+            1.2px 1.2px 2.5px rgba(0, 0, 0, 0.9), 
+            -1.2px -1.2px 2.5px rgba(0, 0, 0, 0.9), 
+            1.2px -1.2px 2.5px rgba(0, 0, 0, 0.9), 
+            -1.2px 1.2px 2.5px rgba(0, 0, 0, 0.9),
+            0.8px 0.8px 1.5px rgba(0, 0, 0, 0.8);
+    }
+
+    .home__bottom {
+        gap: 0.5rem; 
+    }
+
+    .socialButton {
+        width: 30px; 
+        height: 30px;
+    }
+
+    .socialButton svg {
+        font-size: 1rem; 
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .home__contain {
+        height: 60vh;
+    }
+
+    .home__about {
+        margin-left: 0.3rem;
+        margin-top: 3.5rem;
+        max-width: 75%;
+    }
+
+    .home__about h3,
+    .home__about h2,
+    .home__about p,
+    .home__bottom h2 {
+        font-size: 0.9rem; 
+    }
+
+    .home__about h3 {
+        text-shadow: 
+            1px 1px 2px rgba(0, 0, 0, 0.9), 
+            -1px -1px 2px rgba(0, 0, 0, 0.9), 
+            1px -1px 2px rgba(0, 0, 0, 0.9), 
+            -1px 1px 2px rgba(0, 0, 0, 0.9),
+            0.6px 0.6px 1.2px rgba(0, 0, 0, 0.8); 
+    }
+
+    .home__description {
+        bottom: 0.5rem;
+        right: 0.5rem;
+        max-width: 150px;
+    }
+
+    .home__description p {
+        font-size: 0.9rem; 
+        text-shadow: 
+            1px 1px 2px rgba(0, 0, 0, 0.9), 
+            -1px -1px 2px rgba(0, 0, 0, 0.9), 
+            1px -1px 2px rgba(0, 0, 0, 0.9), 
+            -1px 1px 2px rgba(0, 0, 0, 0.9),
+            0.6px 0.6px 1.2px rgba(0, 0, 0, 0.8);
+    }
+
+    .home__bottom {
+        gap: 0.4rem; 
+    }
+
+    .socialButton {
+        width: 28px; 
+        height: 28px;
+    }
+
+    .socialButton svg {
+        font-size: 0.9rem; 
+    }
 }

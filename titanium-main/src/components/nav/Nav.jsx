@@ -1,24 +1,29 @@
 import BoatLogo from "../../assets/logo/311301-ffffff.svg";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import './nav.css';
 
-
 function Nav() {
-
-  const [showLinks, setShowLinks] = useState(false)
+  const [showLinks, setShowLinks] = useState(false);
 
   const handleShowLinks = () => {
-    setShowLinks(!showLinks)
-  }
+    setShowLinks(!showLinks);
+  };
+
   return (
-    <nav className={`navbar ${showLinks ? " show-nav" : "hide-nav"}`}>
-      <div className="navbar__logo" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-  <img src={BoatLogo} alt="Logo bateau" height="40" />
-  <h1>Titanium</h1>
-</div>
+    <nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"}`}>
+      <div className="navbar__logo">
+        <div className="navbar__logo-container">
+          <img src={BoatLogo} alt="Logo bateau" height="40" />
+          <div className="navbar__logo-text">
+            <span className="navbar__logo-diamond">◆</span>
+            <h1>TITANIUM</h1>
+            <span className="navbar__logo-diamond">◆</span>
+          </div>
+        </div>
+      </div>
 
       <ul className="navbar__links">
-        <li className="navbar__item slideInDown-1" onClick={handleShowLinks} >
+        <li className="navbar__item slideInDown-1" onClick={handleShowLinks}>
           <a href="#home" className="navbar__link">
             Accueil
           </a>
@@ -41,4 +46,4 @@ function Nav() {
   );
 }
 
-export default Nav
+export default Nav;

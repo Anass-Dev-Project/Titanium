@@ -9,6 +9,7 @@
   text-decoration: none;
   list-style: none;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -20,17 +21,16 @@ html {
   --color-primary-light: rgba(103, 160, 211, 0.6);
   --color-secondary: rgba(73, 82, 90, 1);
   --color-secondary-middle: rgba(73, 82, 90, 0.6);
-  --color-secondary-light : rgba(73, 82, 90, 0.1);
+  --color-secondary-light: rgba(73, 82, 90, 0.1);
   --color-tercary: rgba(220, 220, 220, 0.3);
   --color-tercary-dark: rgba(211, 211, 211, 0.8);
   --color-text-dark: #02040F;
   --color-text-light: #f5f5f5;
 
-  --border-radius : 15px; 
+  --border-radius: 15px; 
   --border-radius-top: 15px 15px 0 0;
-  --border-radius-left : 15px 0 0 15px; 
-  --tansition : all .5s ease-in-out;
-
+  --border-radius-left: 15px 0 0 15px; 
+  --tansition: all .5s ease-in-out;
 }
 
 body {
@@ -40,20 +40,28 @@ body {
   background: var(--color-bg);
   color: var(--color-text-light);
 }
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-#home, #gammes, #contact, #footer {
+
+/* Appliquer max-width et centrage uniquement à #gammes, #contact et #footer */
+#gammes, #contact, #footer {
   max-width: 1040px;
   margin-right: auto;
   margin-left: auto;
 }
+
+/* S'assurer que #home prend toute la largeur sans restrictions */
 #home {
-  padding: 74px 0 0;
+  width: 100%;
+  margin: 0;
+  padding: 0; /* Remplace le padding: 74px 0 0 */
+  overflow-x: hidden;
 }
+
 h4 {
   letter-spacing: 1px;
 }
-

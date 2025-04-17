@@ -1,53 +1,54 @@
 import React from "react";
 import "./home.css";
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
+import { BsFacebook, BsInstagram } from "react-icons/bs";
+import { MdEmail, MdPhone } from "react-icons/md";
 
 function Home() {
+  const handleFacebookClick = () => {
+    window.open("https://www.facebook.com/profile.php?id=100011195713319", "_blank", "noopener,noreferrer");
+  };
+
+  const handleInstagramClick = () => {
+    window.open("https://www.instagram.com/titaniumboats", "_blank", "noopener,noreferrer");
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:contact@bateauxtitanium.com";
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = "tel:0776010471";
+  };
+
   return (
     <section id="home">
       <div className="home__contain">
-        {/* <h1>Bienvenue chez Bateaux Titanium</h1> */}
-      </div>
-      <div className="home__title">
-        <h1>Bateaux Titanium</h1>
-      </div>
-      <div className="home__about">
-        <h3>
-          Envie d'une balade en famille ou entre amis, d'une sortie pêche, d'un
-          week-end détente ou tout simplement d'un instant de farniente ?
-        </h3>
-        <h2>
-          Nous avons la solution ! Notre gamme bateaux Titanium est faite pour vous !
-        </h2>
-        <p>
-          Nous vous proposons des bateaux Titanium élégants, confortables, aux lignes
-          épurées et modernes et conçus avec des matériaux d'excellente qualité.
-          Faire le choix Titanium c'est la garantie de merveilleux moments de
-          plaisir et de détente, et l'occasion de se créer des souvenirs
-          inoubliables ! Nous vous souhaitons une agréable navigation avec
-          Titanium !
-        </p>
-        <div className="home__bottom">
-          <h2>Bienvenus à bord !!!</h2>
-          <div className="socialNetwork">
-            <a
-              href="https://www.facebook.com/profile.php?id=100011195713319"
-              target="_blank"
-              rel="noopener noreferrer"
-              alt="facebook"
-            >
-              <BsFacebook />
-            </a>
-            <a
-              href="https://www.instagram.com/titaniumboats"
-              target="_blank"
-              rel="noopener noreferrer"
-              alt="instagram"
-            >
-              <BsInstagram />
-            </a>
+        <div className="home__about">
+          <h3>
+            Envie d'une balade en famille ou entre amis, d'une sortie pêche, d'un
+            week-end détente ou tout simplement d'un instant de farniente ?
+          </h3>
+          <div className="home__bottom">
+            <div className="socialNetwork">
+              <button className="socialButton" onClick={handleFacebookClick} aria-label="Facebook">
+                <BsFacebook />
+              </button>
+              <button className="socialButton" onClick={handleInstagramClick} aria-label="Instagram">
+                <BsInstagram />
+              </button>
+              <button className="socialButton" onClick={handleEmailClick} aria-label="Email">
+                <MdEmail />
+              </button>
+              <button className="socialButton" onClick={handlePhoneClick} aria-label="Phone">
+                <MdPhone />
+              </button>
+            </div>
           </div>
+        </div>
+        <div className="home__description">
+          <p>
+            Nous vous proposons des bateaux Titanium élégants, confortables, aux lignes épurées et modernes et conçus avec des matériaux d'excellente qualité.
+          </p>
         </div>
       </div>
     </section>
